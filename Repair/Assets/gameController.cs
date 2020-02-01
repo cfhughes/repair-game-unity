@@ -7,12 +7,17 @@ public class gameController : MonoBehaviour
 
     public GameObject testObj;
 
+    public Door door;
+
     void Update()
     {
         if (Input.GetKeyDown("space"))
         {
             //print("space key was pressed");
-            testObj.SetActive(!testObj.activeInHierarchy);
+            //testObj.SetActive(!testObj.activeInHierarchy);
+            door.Toggle();
         }
+
+        
     }
 }
