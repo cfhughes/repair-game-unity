@@ -5,7 +5,7 @@
       "app_key": "application.generated.unity.repair.exe",
       "launch_type": "url",
       "url": "steam://launch/",
-      "action_manifest_path": "D:\\GitRoot\\Repair\\Repair\\Assets\\StreamingAssets\\SteamVR\\actions.json",
+      "action_manifest_path": "D:\\GitRoot\\repair-game-unity\\Repair\\Assets\\StreamingAssets\\SteamVR\\actions.json",
       "strings": {
         "en_us": {
           "name": "Repair [Testing]"
