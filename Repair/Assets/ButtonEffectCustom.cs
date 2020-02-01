@@ -12,6 +12,8 @@ public class ButtonEffectCustom : MonoBehaviour
 {
     public List<Door> doors;
 
+    public List<PressureGauge> pressureGauges;
+
 
     public void OnButtonDown(Hand fromHand)
     {
@@ -21,6 +23,11 @@ public class ButtonEffectCustom : MonoBehaviour
         foreach(Door door in doors)
         {
             door.Toggle();
+        }
+
+        foreach(PressureGauge pressureGauge in pressureGauges)
+        {
+            pressureGauge.Reset();
         }
     }
 
