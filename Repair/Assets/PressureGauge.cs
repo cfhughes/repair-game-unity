@@ -12,6 +12,7 @@ public class PressureGauge : MonoBehaviour
     public List<AudioClip> explosionSounds;
     public AudioSource explosionAudioSource;
     public float overloadCurrentTime = 0;
+    public float overloadPercent = 0;
 
     float minAngle = 0;
     float maxAngle = 60;
@@ -47,7 +48,7 @@ public class PressureGauge : MonoBehaviour
         }
 
         overloadCurrentTime += Time.deltaTime;
-        float overloadPercent = Mathf.Min(overloadCurrentTime/overloadTotalTime, 1);
+        overloadPercent = Mathf.Min(overloadCurrentTime/overloadTotalTime, 1);
         var sh = smoke.shape;
         sh.angle = Mathf.Lerp(minAngle, maxAngle, overloadPercent);
         var em = smoke.emission;

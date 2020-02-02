@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour
     public TextMeshPro timerText;
     public GameObject renderTexture;
     public PressureGauge startingGuage;
+    public List<PressureGauge> pressureGauges;
 
     float gameTime;
 
@@ -60,6 +61,17 @@ public class GameController : MonoBehaviour
         
         gameTime += Time.deltaTime;
         timerText.text = gameTime.ToString("F2");
+
+        bool showCaution = false;
+        foreach(PressureGauge pressureGauge in pressureGauges)
+        {
+            if(pressureGauge.overloadPercent > .8)
+            {
+                showCaution = true;
+                break;
+            }
+        }
+        endFade.enableCaution(showCaution);
     }
 
     IEnumerator WaitForStartAfterTenSeconds()

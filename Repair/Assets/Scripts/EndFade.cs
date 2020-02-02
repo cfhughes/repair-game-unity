@@ -36,7 +36,10 @@ public class EndFade : MonoBehaviour
 
     public void enableCaution(bool a)
     {
-        caution.SetActive(a);
+        if(caution.activeInHierarchy != a)
+        {
+            caution.SetActive(a);
+        }
     }
 
     public void Fade(bool fadeIn)
