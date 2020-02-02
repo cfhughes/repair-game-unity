@@ -5,6 +5,7 @@ using UnityEngine;
 public class PressureGauge : MonoBehaviour
 {
     public float overloadTotalTime;
+    public float resetDelayMax;
     public ParticleSystem smoke;
     public GameObject sparks;
 
@@ -14,8 +15,12 @@ public class PressureGauge : MonoBehaviour
     float minEmission = 8;
     float maxEmission = 16;
 
+    GameController gameController;
+    
+
     void Start()
     {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
         Reset();
     }
 
@@ -26,19 +31,24 @@ public class PressureGauge : MonoBehaviour
         var sh = smoke.shape;
         sh.angle = Mathf.Lerp(minAngle, maxAngle, overloadPercent);
         var em = smoke.emission;
+        print(overloadPercent);
         if(overloadPercent > .3 && !sparks.activeInHierarchy)
         {
             sparks.SetActive(true);
         }
-        else if(overloadPercent > .6)
+        if(overloadPercent > .6)
         {
             em.rateOverTime = Mathf.Lerp(minEmission, maxEmission, overloadPercent);
+        }
+        if(overloadPercent >= 1)
+        {
+            print("end game");
+            gameController.EndGame();
         }
     }
 
     public void Reset()
     {
-        print(sparks.transform.position.y);
         sparks.SetActive(false);
         var em = smoke.emission;
         em.rateOverTime = 0;

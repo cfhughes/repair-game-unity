@@ -2,20 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameController : MonoBehaviour
+public enum GameState {WAITING_FOR_START, PLAYING}
+
+public class GameController : MonoBehaviour
 {
 
+    
+    GameState gameState = GameState.PLAYING;
     public EndFade endFade;
 
     void Start()
     {
-        /*endFade.enableText(true);
-        endFade.setText("whatever");
-        endFade.Fade();*/
     }
 
-    void Update()
+    public void EndGame()
     {
-
+        print("end game");
+        if(gameState == GameState.PLAYING)
+        {
+            gameState = GameState.WAITING_FOR_START;
+            endFade.enableText(true);
+            endFade.setText("whatever");
+            endFade.Fade();
+        }
     }
 }
