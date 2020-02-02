@@ -109,7 +109,7 @@ PrefabInstance:
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: overloadTotalTime
-      value: 30
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
@@ -279,12 +279,12 @@ PrefabInstance:
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: overloadTotalTime
-      value: 50
+      value: 70
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: resetDelayMax
-      value: 15
+      value: 30
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ebdd7ec3d72e04481355a10b54ff71, type: 3}
@@ -364,12 +364,12 @@ PrefabInstance:
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: overloadTotalTime
-      value: 50
+      value: 140
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: resetDelayMax
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ebdd7ec3d72e04481355a10b54ff71, type: 3}
@@ -534,12 +534,12 @@ PrefabInstance:
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: overloadTotalTime
-      value: 50
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: resetDelayMax
-      value: 15
+      value: 20
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ebdd7ec3d72e04481355a10b54ff71, type: 3}
@@ -619,7 +619,7 @@ PrefabInstance:
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: overloadTotalTime
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
@@ -789,12 +789,12 @@ PrefabInstance:
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: overloadTotalTime
-      value: 50
+      value: 85
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}
       propertyPath: resetDelayMax
-      value: 15
+      value: 35
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 74ebdd7ec3d72e04481355a10b54ff71, type: 3}
