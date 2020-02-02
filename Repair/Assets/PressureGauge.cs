@@ -29,6 +29,10 @@ public class PressureGauge : MonoBehaviour
     {
         if(gameController.gameState == GameState.WAITING_FOR_START)
         {
+            if(sparks.activeInHierarchy)
+            {
+                Reset();
+            }
             return;
         }
 
