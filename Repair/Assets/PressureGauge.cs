@@ -6,6 +6,7 @@ public class PressureGauge : MonoBehaviour
 {
     public float overloadTotalTime;
     public ParticleSystem smoke;
+    public GameObject sparks;
 
     float overloadCurrentTime = 0;
     float minAngle = 0;
@@ -13,6 +14,10 @@ public class PressureGauge : MonoBehaviour
     float minEmission = 8;
     float maxEmission = 16;
 
+    void Start()
+    {
+        Reset();
+    }
 
     void Update()
     {
@@ -21,11 +26,11 @@ public class PressureGauge : MonoBehaviour
         var sh = smoke.shape;
         sh.angle = Mathf.Lerp(minAngle, maxAngle, overloadPercent);
         var em = smoke.emission;
-        if(overloadPercent < .3)
+        if(overloadPercent > .3 && !sparks.activeInHierarchy)
         {
-            em.rateOverTime = 0;
+            sparks.SetActive(true);
         }
-        else
+        else if(overloadPercent > .6)
         {
             em.rateOverTime = Mathf.Lerp(minEmission, maxEmission, overloadPercent);
         }
@@ -33,6 +38,10 @@ public class PressureGauge : MonoBehaviour
 
     public void Reset()
     {
+        print(sparks.transform.position.y);
+        sparks.SetActive(false);
+        var em = smoke.emission;
+        em.rateOverTime = 0;
         overloadCurrentTime = 0;
     }
 }
