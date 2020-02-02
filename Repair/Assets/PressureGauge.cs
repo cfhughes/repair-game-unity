@@ -17,11 +17,13 @@ public class PressureGauge : MonoBehaviour
 
 
     GameController gameController;
+    AudioSource audioSource;
     
 
     void Start()
     {
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
+        audioSource = GetComponent<AudioSource>();
         Reset();
     }
 
@@ -41,6 +43,7 @@ public class PressureGauge : MonoBehaviour
         var sh = smoke.shape;
         sh.angle = Mathf.Lerp(minAngle, maxAngle, overloadPercent);
         var em = smoke.emission;
+        audioSource.volume = overloadPercent;
         if(overloadPercent > .3 && !sparks.activeInHierarchy)
         {
             sparks.SetActive(true);
