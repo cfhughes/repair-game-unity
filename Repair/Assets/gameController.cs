@@ -5,19 +5,17 @@ using UnityEngine;
 public class gameController : MonoBehaviour
 {
 
-    public GameObject testObj;
+    public EndFade endFade;
 
-    public Door door;
+    void Start()
+    {
+        /*endFade.enableText(true);
+        endFade.setText("whatever");
+        endFade.Fade();*/
+    }
 
     void Update()
     {
-        if (Input.GetKeyDown("space"))
-        {
-            //print("space key was pressed");
-            //testObj.SetActive(!testObj.activeInHierarchy);
-            door.Toggle();
-        }
 
-        
     }
 }
