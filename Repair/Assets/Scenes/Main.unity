@@ -612,7 +612,7 @@ PrefabInstance:
     - target: {fileID: 764334326217139750, guid: 7330f2691f5fd4840a0621cd6e196d34,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 764334326217139750, guid: 7330f2691f5fd4840a0621cd6e196d34,
         type: 3}
@@ -1345,7 +1345,7 @@ Transform:
   - {fileID: 178052329}
   - {fileID: 98686362}
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1506536482
 PrefabInstance:
@@ -2382,6 +2382,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: ThirdPersonPressureGauge
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014361448610537256, guid: 74ebdd7ec3d72e04481355a10b54ff71,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 6014361448610537256, guid: 74ebdd7ec3d72e04481355a10b54ff71,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7385793710258358246, guid: 74ebdd7ec3d72e04481355a10b54ff71,
         type: 3}

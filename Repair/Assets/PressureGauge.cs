@@ -9,12 +9,16 @@ public class PressureGauge : MonoBehaviour
     public ParticleSystem smoke;
     public GameObject sparks;
     public GameObject explosion;
+    public List<AudioClip> explosionSounds;
+    public AudioSource explosionAudioSource;
 
     float overloadCurrentTime = 0;
     float minAngle = 0;
     float maxAngle = 60;
     float minEmission = 8;
     float maxEmission = 16;
+
+    bool exploded = false;
 
 
     GameController gameController;
@@ -44,7 +48,7 @@ public class PressureGauge : MonoBehaviour
         var sh = smoke.shape;
         sh.angle = Mathf.Lerp(minAngle, maxAngle, overloadPercent);
         var em = smoke.emission;
-        audioSource.volume = overloadPercent;
+        audioSource.volume = overloadPercent >= 1 ? 0 : overloadPercent;
         if(overloadPercent > .3 && !sparks.activeInHierarchy)
         {
             sparks.SetActive(true);
@@ -53,16 +57,22 @@ public class PressureGauge : MonoBehaviour
         {
             em.rateOverTime = Mathf.Lerp(minEmission, maxEmission, overloadPercent);
         }
-        if(overloadPercent >= 1)
+        if(overloadPercent >= 1 && ! exploded)
         {
+            exploded = true;
+            audioSource.volume = 0;
+            explosionAudioSource.clip = explosionSounds[Random.Range(0, explosionSounds.Count - 1)];
             explosion.SetActive(false);
             explosion.SetActive(true);
+            sparks.SetActive(false);
+            em.rateOverTime = 0;
             gameController.EndGame();
         }
     }
 
     public void Reset()
     {
+        exploded = false;
         sparks.SetActive(false);
         var em = smoke.emission;
         em.rateOverTime = 0;
