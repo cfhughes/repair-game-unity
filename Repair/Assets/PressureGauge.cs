@@ -31,7 +31,6 @@ public class PressureGauge : MonoBehaviour
         var sh = smoke.shape;
         sh.angle = Mathf.Lerp(minAngle, maxAngle, overloadPercent);
         var em = smoke.emission;
-        print(overloadPercent);
         if(overloadPercent > .3 && !sparks.activeInHierarchy)
         {
             sparks.SetActive(true);
@@ -42,7 +41,6 @@ public class PressureGauge : MonoBehaviour
         }
         if(overloadPercent >= 1)
         {
-            print("end game");
             gameController.EndGame();
         }
     }

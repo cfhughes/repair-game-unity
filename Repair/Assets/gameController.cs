@@ -17,12 +17,11 @@ public class GameController : MonoBehaviour
 
     public void EndGame()
     {
-        print("end game");
         if(gameState == GameState.PLAYING)
         {
             gameState = GameState.WAITING_FOR_START;
             endFade.enableText(true);
-            endFade.setText("whatever");
+            endFade.setText("Game Over\nYou repaired for XX seconds");
             endFade.Fade();
         }
     }
