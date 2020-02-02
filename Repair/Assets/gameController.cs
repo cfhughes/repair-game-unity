@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
     public GameState gameState = GameState.WAITING_FOR_START;
     public EndFade endFade;
     public TextMeshPro timerText;
+    public GameObject renderTexture;
 
     float gameTime;
 
@@ -46,6 +47,11 @@ public class GameController : MonoBehaviour
 
     void Update()
     {
+        if(Input.GetKeyDown("space"))
+        {
+            renderTexture.gameObject.SetActive(!renderTexture.gameObject.activeInHierarchy);
+        }
+
         if(gameState == GameState.WAITING_FOR_START)
             return;
         
