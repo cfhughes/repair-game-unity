@@ -14,9 +14,20 @@ public class ButtonEffectCustom : MonoBehaviour
 
     public List<PressureGauge> pressureGauges;
 
+    GameController gameController;
+
+    void Start()
+    {
+        gameController = GameObject.Find("GameController").GetComponent<GameController>();
+    }
+
 
     public void OnButtonDown(Hand fromHand)
     {
+        if(gameController.gameState == GameState.WAITING_FOR_START)
+        {
+            gameController.StartGame();
+        }
         ColorSelf(Color.cyan);
         fromHand.TriggerHapticPulse(1000);
 

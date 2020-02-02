@@ -32,9 +32,17 @@ public class EndFade : MonoBehaviour
         score.enabled = a;
     }
 
-    public void Fade()
+    public void Fade(bool fadeIn)
     {
-        StartCoroutine(FadeTo(1.0f, 5.0f));
+        if(fadeIn)
+        {
+            StartCoroutine(FadeTo(1.0f, 5.0f));
+        }
+        else
+        {
+            print("fade out");
+            image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
+        }
     }
 
     IEnumerator FadeTo(float aValue, float aTime)

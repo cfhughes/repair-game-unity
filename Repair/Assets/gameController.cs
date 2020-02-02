@@ -8,21 +8,44 @@ public class GameController : MonoBehaviour
 {
 
     
-    GameState gameState = GameState.PLAYING;
+    public GameState gameState = GameState.PLAYING;
     public EndFade endFade;
+
+    float gameTime;
 
     void Start()
     {
     }
 
+    public void StartGame()
+    {
+        print("Start Game");
+        if(gameState == GameState.WAITING_FOR_START)
+        {
+            gameState = GameState.PLAYING;
+            endFade.enableText(false);
+            endFade.Fade(false);
+            gameTime = 0;
+        }
+    }
+
     public void EndGame()
     {
+        print("End Game");
         if(gameState == GameState.PLAYING)
         {
             gameState = GameState.WAITING_FOR_START;
             endFade.enableText(true);
-            endFade.setText("Game Over\nYou repaired for XX seconds");
-            endFade.Fade();
+            endFade.setText("Game Over\nYou repaired for "+gameTime.ToString()+" seconds");
+            endFade.Fade(true);
         }
+    }
+
+    void Update()
+    {
+        if(gameState == GameState.WAITING_FOR_START)
+            return;
+        
+        gameTime += Time.deltaTime;
     }
 }

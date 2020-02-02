@@ -15,6 +15,7 @@ public class PressureGauge : MonoBehaviour
     float minEmission = 8;
     float maxEmission = 16;
 
+
     GameController gameController;
     
 
@@ -26,6 +27,11 @@ public class PressureGauge : MonoBehaviour
 
     void Update()
     {
+        if(gameController.gameState == GameState.WAITING_FOR_START)
+        {
+            return;
+        }
+
         overloadCurrentTime += Time.deltaTime;
         float overloadPercent = Mathf.Min(overloadCurrentTime/overloadTotalTime, 1);
         var sh = smoke.shape;
@@ -50,6 +56,6 @@ public class PressureGauge : MonoBehaviour
         sparks.SetActive(false);
         var em = smoke.emission;
         em.rateOverTime = 0;
-        overloadCurrentTime = 0;
+        overloadCurrentTime = Random.Range(0, resetDelayMax) * -1;
     }
 }
