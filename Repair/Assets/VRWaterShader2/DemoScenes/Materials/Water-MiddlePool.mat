@@ -9,7 +9,8 @@ Material:
   m_PrefabAsset: {fileID: 0}
   m_Name: Water-MiddlePool
   m_Shader: {fileID: 4800000, guid: 58f047517fd799149bfc42cb67a78e41, type: 3}
-  m_ShaderKeywords: _BLENDENABLETHIS_ON _CULL_NONE _SECONDWAVEENABLETHIS_ON
+  m_ShaderKeywords: FOURTH_ENABLED SECOND_ENABLED THIRD_ENABLED _BLENDENABLETHIS_ON
+    _CULL_NONE _SECONDWAVEENABLETHIS_ON
   m_LightmapFlags: 4
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
@@ -141,9 +142,9 @@ Material:
     - _Cutoff: 0.5
     - _DetailNormalMapScale: 1
     - _DstBlend: 0
-    - _FirstWaveHeightStrength: 0.127
+    - _FirstWaveHeightStrength: 0.17
     - _FirstWaveNormalStrength: 0.686
-    - _FourthWaveEnableThis: 0
+    - _FourthWaveEnableThis: 1
     - _FourthWaveHeightStrength: -0.148
     - _FourthWaveNormalStrength: 0.5
     - _GlossMapScale: 1
@@ -159,8 +160,8 @@ Material:
     - _Parallax: 0.02
     - _SSRefractionDecaydistance: 5
     - _SSRefractionRefractionFresnel: 3.02
-    - _SSRefractionStrength: 0.096
-    - _SecondWaveEnableThis: 0
+    - _SSRefractionStrength: 0.35
+    - _SecondWaveEnableThis: 1
     - _SecondWaveHeightStrength: 0.1
     - _SecondWaveNormalStrength: 0.301
     - _ShadowOffset: 0
@@ -172,23 +173,23 @@ Material:
     - _TessellationFarCap: 500
     - _TessellationNearCap: 0
     - _TessellationStrength: 60.5
-    - _ThirdWaveEnableThis: 0
+    - _ThirdWaveEnableThis: 1
     - _ThirdWaveHeightStrength: 0
     - _ThirdWaveNormalStrength: 0.545
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
-    - _BaseColor: {r: 0.06770837, g: 1, b: 0, a: 0.65882355}
+    - _BaseColor: {r: 0.44892174, g: 0.8301887, b: 0.4229263, a: 1}
     - _BlendColor: {r: 1, g: 0, b: 0, a: 1}
     - _BlendTextureUandVspeedZWNotused: {r: 0.01, g: 0.01, b: 0, a: 0}
     - _Color: {r: 0.8, g: 0.8, b: 0.8, a: 1}
     - _CubemapBaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _EmissionColor: {r: 0.33421534, g: 0.6603774, b: 0.16509435, a: 1}
-    - _FirstWaveUandVspeed: {r: 0.005, g: 0.0123, b: 0, a: 0}
+    - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
+    - _FirstWaveUandVspeed: {r: 0.005, g: 0.00123, b: 0, a: 0}
     - _FirstWaveUandVspeedZWNotused: {r: 0, g: 0, b: 0, a: 0}
-    - _FourthWaveUandVspeed: {r: -0.05, g: -0.075, b: 0, a: 0}
+    - _FourthWaveUandVspeed: {r: -0.005, g: -0.0075, b: 0, a: 0}
     - _FourthWaveUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
-    - _SecondWaveUandVspeed: {r: -0.12, g: -0.082, b: 0, a: 0}
+    - _SecondWaveUandVspeed: {r: -0.0012, g: -0.0082, b: 0, a: 0}
     - _SecondWaveUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
-    - _ThirdWaveUandVspeed: {r: -0.01, g: -0.1, b: 0, a: 0}
+    - _ThirdWaveUandVspeed: {r: -0.0001, g: 0.0001, b: 0, a: 0}
     - _ThirdWaveUandVspeedZWNotused: {r: -0.05, g: -0.075, b: 0, a: 0}
