@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public enum GameState {WAITING_FOR_START, PLAYING}
+public enum GameState {WAITING_FOR_START, PLAYING, GAME_OVER}
 
 public class GameController : MonoBehaviour
 {
@@ -38,10 +38,11 @@ public class GameController : MonoBehaviour
         print("End Game");
         if(gameState == GameState.PLAYING)
         {
-            gameState = GameState.WAITING_FOR_START;
+            gameState = GameState.GAME_OVER;
             endFade.enableText(true);
             endFade.setText("Game Over\nYou repaired for "+gameTime.ToString("F2")+" seconds");
             endFade.Fade(true);
+            StartCoroutine(WaitForStartAfterTenSeconds());
         }
     }
 
@@ -57,5 +58,11 @@ public class GameController : MonoBehaviour
         
         gameTime += Time.deltaTime;
         timerText.text = gameTime.ToString("F2");
+    }
+
+    IEnumerator WaitForStartAfterTenSeconds()
+    {
+        yield return new WaitForSeconds(5);
+        gameState = GameState.WAITING_FOR_START;
     }
 }

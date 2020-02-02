@@ -7,7 +7,8 @@ using TMPro;
 public class EndFade : MonoBehaviour
 {
     // Should refer external object, eventually
-    public Image image;
+    public Image background;
+    public GameObject caution;
     public TMP_Text score;
 
     //string testString = "This is a test.";
@@ -17,7 +18,8 @@ public class EndFade : MonoBehaviour
     {
         //image = GetComponent<Image>();
         //score = GetComponent<TMP_Text>();
-        image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
+        background.color = new Color(background.color.r, background.color.g, background.color.b, 0);
+        caution.SetActive(false);
         score.enabled = false;
         //Fade(); // Here for testing.
     }
@@ -32,6 +34,11 @@ public class EndFade : MonoBehaviour
         score.enabled = a;
     }
 
+    public void enableCaution(bool a)
+    {
+        caution.SetActive(a);
+    }
+
     public void Fade(bool fadeIn)
     {
         if(fadeIn)
@@ -41,7 +48,7 @@ public class EndFade : MonoBehaviour
         else
         {
             print("fade out");
-            image.color = new Color(image.color.r, image.color.g, image.color.b, 0);
+            background.color = new Color(background.color.r, background.color.g, background.color.b, 0);
         }
     }
 
@@ -52,7 +59,7 @@ public class EndFade : MonoBehaviour
         while(Time.time < endTime)
         {
             float fadePercent = (Time.time - startTime) / aTime;
-            image.color = new Color(image.color.r, image.color.g, image.color.b, fadePercent);
+            background.color = new Color(background.color.r, background.color.g, background.color.b, fadePercent);
             yield return null;
         }
     }
