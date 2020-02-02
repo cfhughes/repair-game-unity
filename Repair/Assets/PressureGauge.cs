@@ -11,14 +11,15 @@ public class PressureGauge : MonoBehaviour
     public GameObject explosion;
     public List<AudioClip> explosionSounds;
     public AudioSource explosionAudioSource;
+    public float overloadCurrentTime = 0;
 
-    float overloadCurrentTime = 0;
     float minAngle = 0;
     float maxAngle = 60;
     float minEmission = 8;
     float maxEmission = 16;
 
     bool exploded = false;
+    float overloadTotalTimeReset;
 
 
     GameController gameController;
@@ -27,6 +28,7 @@ public class PressureGauge : MonoBehaviour
 
     void Start()
     {
+        overloadTotalTimeReset = overloadTotalTime;
         gameController = GameObject.Find("GameController").GetComponent<GameController>();
         audioSource = GetComponent<AudioSource>();
         Reset();
@@ -38,6 +40,7 @@ public class PressureGauge : MonoBehaviour
         {
             if(sparks.activeInHierarchy)
             {
+                overloadTotalTime = overloadTotalTimeReset;
                 Reset();
             }
             return;
@@ -72,6 +75,7 @@ public class PressureGauge : MonoBehaviour
 
     public void Reset()
     {
+        overloadTotalTime *= .8f;
         exploded = false;
         sparks.SetActive(false);
         var em = smoke.emission;

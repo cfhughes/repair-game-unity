@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
     public EndFade endFade;
     public TextMeshPro timerText;
     public GameObject renderTexture;
+    public PressureGauge startingGuage;
 
     float gameTime;
 
@@ -30,6 +31,7 @@ public class GameController : MonoBehaviour
             endFade.enableText(false);
             endFade.Fade(false);
             gameTime = 0;
+            startingGuage.overloadCurrentTime = 0;
         }
     }
 
