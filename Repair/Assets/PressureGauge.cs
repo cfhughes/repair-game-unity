@@ -8,6 +8,7 @@ public class PressureGauge : MonoBehaviour
     public float resetDelayMax;
     public ParticleSystem smoke;
     public GameObject sparks;
+    public GameObject explosion;
 
     float overloadCurrentTime = 0;
     float minAngle = 0;
@@ -54,6 +55,8 @@ public class PressureGauge : MonoBehaviour
         }
         if(overloadPercent >= 1)
         {
+            explosion.SetActive(false);
+            explosion.SetActive(true);
             gameController.EndGame();
         }
     }
